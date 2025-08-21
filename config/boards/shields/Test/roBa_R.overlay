@@ -61,17 +61,3 @@
         scroll-layers = <5>;
     };
 };
-
-
-/ {
-    filter_idle: filter_idle {
-        compatible = "zmk,input-processor-filter-idle";
-        idle-ms = <200>;  // キー入力から200ms以内の入力は無視
-    };
-
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        input-processors = <&filter_idle>;
-    };
-};
